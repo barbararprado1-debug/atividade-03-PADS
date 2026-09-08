@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dashboard de preços da gasolina em São Paulo capital, com dados da ANP."
+    />
+    <title>Gasolina SP | Onde abastecer?</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">DADOS ANP · SÃO PAULO CAPITAL</p>
+          <h1>Onde vale mais a pena abastecer?</h1>
+          <p class="subtitle">Preços da gasolina comum em postos pesquisados pela ANP.</p>
+        </div>
+        <div class="source-badge">1º semestre · 2026</div>
+      </header>
+
+      <section class="controls" aria-label="Filtros do dashboard">
+        <label>
+          <span>Período</span>
+          <select id="periodFilter">
+            <option value="all">Semestre inteiro</option>
+            <option value="last4">Últimas 4 semanas</option>
+            <option value="2026-01">Janeiro</option>
+            <option value="2026-02">Fevereiro</option>
+            <option value="2026-03">Março</option>
+            <option value="2026-04">Abril</option>
+            <option value="2026-05">Maio</option>
+            <option value="2026-06">Junho</option>
+          </select>
+        </label>
+        <label>
+          <span>Bandeira</span>
+          <select id="brandFilter">
+            <option value="all">Todas as bandeiras</option>
+          </select>
+        </label>
+        <div class="ranking-control">
+          <span>Ranking</span>
+          <div class="toggle-group" role="group" aria-label="Ordenação do ranking">
+            <button class="toggle active" type="button" data-order="cheap">Mais baratos</button>
+            <button class="toggle" type="button" data-order="expensive">Mais caros</button>
+          </div>
+        </div>
+      </section>
+
+      <p class="result-summary" id="resultSummary" aria-live="polite">Carregando dados…</p>
+
+      <section class="kpis" aria-label="Indicadores principais">
+        <article class="kpi-card">
+          <span>Preço médio</span>
+          <strong id="avgPrice">—</strong>
+          <small id="avgPriceCaption">—</small>
+        </article>
+        <article class="kpi-card accent">
+          <span>Diferença entre bairros</span>
+          <strong id="neighborhoodGap">—</strong>
+          <small id="gapCaption">—</small>
+        </article>
+        <article class="kpi-card">
+          <span>Impacto em 45 litros</span>
+          <strong id="tankImpact">—</strong>
+          <small>Comparando os extremos do ranking</small>
+        </article>
+        <article class="kpi-card">
+          <span>Variação típica</span>
+          <strong id="typicalGap">—</strong>
+          <small>P90 − P10 dos postos selecionados</small>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel ranking-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow" id="rankingEyebrow">TOP 10</p>
+              <h2 id="rankingTitle">Bairros mais baratos</h2>
+            </div>
+            <span class="sample-key">Mostra postos e coletas</span>
+          </div>
+          <div id="rankingChart" class="ranking-chart" aria-live="polite"></div>
+        </article>
+
+        <article class="panel trend-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">TENDÊNCIA</p>
+              <h2>Preço médio por semana</h2>
+            </div>
+            <div class="legend" aria-label="Legenda do gráfico">
+              <span><i class="line-dot blue"></i>Preço médio</span>
+              <span><i class="line-dot orange"></i>Média móvel</span>
+            </div>
+          </div>
+          <div id="trendChart" class="trend-chart" aria-label="Gráfico de linha do preço médio semanal"></div>
+        </article>
+      </section>
+
+      <section class="method-note">
+        <strong>Como ler este painel</strong>
+        <p>
+          Os valores vêm de uma pesquisa amostral da ANP. O ranking considera todos os bairros disponíveis no filtro, sem mínimo de postos; por isso, use as quantidades exibidas como contexto antes de decidir.
+        </p>
+      </section>
+
+      <footer>
+        Fonte: <a href="https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis" target="_blank" rel="noreferrer">ANP — Série Histórica de Preços de Combustíveis</a>.
+      </footer>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
