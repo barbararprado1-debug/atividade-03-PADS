@@ -1,0 +1,145 @@
+:root {
+  --navy: #13233f;
+  --blue: #2868c7;
+  --blue-soft: #eaf2ff;
+  --orange: #ed7d31;
+  --orange-soft: #fff0e7;
+  --ink: #1d2939;
+  --muted: #667085;
+  --line: #dce3ee;
+  --surface: #ffffff;
+  --canvas: #f4f7fb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--canvas);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button, select { font: inherit; }
+
+.page-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 38px 0 28px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 32px;
+  color: white;
+  background: linear-gradient(120deg, #13233f, #1d4f99);
+  border-radius: 22px;
+  box-shadow: 0 18px 35px rgba(19, 35, 63, .16);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--blue);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.topbar .eyebrow { color: #b9d4ff; }
+h1, h2, p { margin-top: 0; }
+h1 { margin-bottom: 8px; font-size: clamp(2rem, 4vw, 3.15rem); letter-spacing: -.045em; }
+h2 { margin-bottom: 0; font-size: 1.18rem; letter-spacing: -.02em; }
+.subtitle { margin-bottom: 0; color: #dce9ff; font-size: 1rem; }
+
+.source-badge {
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  color: #ffead9;
+  background: rgba(237, 125, 49, .25);
+  border: 1px solid rgba(255, 234, 217, .35);
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.45fr;
+  gap: 16px;
+  margin: 24px 0 10px;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+label, .ranking-control { display: grid; gap: 7px; }
+label span, .ranking-control > span { color: var(--muted); font-size: .78rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+select {
+  width: 100%;
+  padding: 11px 12px;
+  color: var(--ink);
+  background: white;
+  border: 1px solid #cfd8e6;
+  border-radius: 10px;
+}
+
+.toggle-group { display: flex; padding: 3px; border-radius: 11px; background: #edf1f7; }
+.toggle { flex: 1; padding: 9px 11px; border: 0; border-radius: 8px; color: var(--muted); background: transparent; cursor: pointer; font-size: .88rem; font-weight: 750; }
+.toggle.active { color: white; background: var(--navy); box-shadow: 0 2px 6px rgba(19, 35, 63, .2); }
+
+.result-summary { min-height: 22px; margin: 0 2px 16px; color: var(--muted); font-size: .9rem; }
+
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.kpi-card { min-height: 136px; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+.kpi-card.accent { background: var(--orange-soft); border-color: #ffd6bb; }
+.kpi-card span { display: block; color: var(--muted); font-size: .82rem; font-weight: 700; }
+.kpi-card strong { display: block; margin: 13px 0 7px; color: var(--navy); font-size: 1.75rem; letter-spacing: -.04em; }
+.kpi-card.accent strong { color: #b54708; }
+.kpi-card small { color: var(--muted); font-size: .76rem; line-height: 1.35; }
+
+.dashboard-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; margin-top: 18px; }
+.panel, .method-note { padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
+.panel-heading { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
+.sample-key { padding: 6px 9px; color: var(--muted); background: #f2f5f9; border-radius: 999px; font-size: .72rem; white-space: nowrap; }
+
+.ranking-chart { display: grid; gap: 14px; }
+.rank-row { display: grid; grid-template-columns: minmax(105px, 1.2fr) 2.1fr auto; gap: 10px; align-items: center; }
+.rank-name { overflow: hidden; font-size: .83rem; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+.bar-track { height: 28px; overflow: hidden; background: #edf2f8; border-radius: 7px; }
+.bar { display: flex; align-items: center; height: 100%; min-width: 6%; padding-left: 8px; color: white; background: linear-gradient(90deg, #387eda, #235caf); border-radius: 7px; font-size: .72rem; font-weight: 750; }
+.rank-row.expensive .bar { background: linear-gradient(90deg, #ee9b60, #cf5c12); }
+.rank-detail { color: var(--muted); font-size: .72rem; text-align: right; white-space: nowrap; }
+
+.trend-chart { min-height: 315px; }
+.chart-svg { width: 100%; height: 290px; overflow: visible; }
+.grid-line { stroke: #e5ebf3; stroke-width: 1; }
+.axis-label { fill: #7d8797; font-size: 10px; }
+.line-main { fill: none; stroke: var(--blue); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.line-moving { fill: none; stroke: var(--orange); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.point { fill: white; stroke: var(--blue); stroke-width: 2; }
+.legend { display: flex; flex-wrap: wrap; gap: 10px; color: var(--muted); font-size: .72rem; }
+.line-dot { display: inline-block; width: 18px; height: 3px; margin-right: 5px; vertical-align: middle; border-radius: 2px; }
+.line-dot.blue { background: var(--blue); }.line-dot.orange { background: var(--orange); }
+
+.empty { padding: 35px 10px; color: var(--muted); text-align: center; }
+.method-note { display: grid; grid-template-columns: 180px 1fr; gap: 16px; margin-top: 18px; background: #edf5ff; border-color: #cfe0f8; }
+.method-note strong { color: var(--navy); }.method-note p { margin: 0; color: #475467; font-size: .88rem; line-height: 1.55; }
+footer { margin: 18px 4px 0; color: var(--muted); font-size: .76rem; } footer a { color: var(--blue); }
+
+@media (max-width: 860px) {
+  .controls, .kpis, .dashboard-grid { grid-template-columns: 1fr 1fr; }
+  .ranking-panel, .trend-panel { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+  .page-shell { width: min(100% - 20px, 1180px); padding-top: 10px; }
+  .topbar { padding: 24px; border-radius: 16px; flex-direction: column; }
+  .controls, .kpis { grid-template-columns: 1fr; }
+  .method-note { grid-template-columns: 1fr; }
+  .panel { padding: 18px; }.panel-heading { flex-direction: column; }
+  .rank-row { grid-template-columns: 95px 1fr; }.rank-detail { grid-column: 2; text-align: left; }
+}
