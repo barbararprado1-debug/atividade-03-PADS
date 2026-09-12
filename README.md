@@ -12,7 +12,7 @@ Dashboard estático e interativo que explora a variação dos preços da gasolin
 
 ## Pergunta norteadora
 
-**Onde é mais barato abastecer em São Paulo - e quanto essa escolha pode representar em um tanque?**
+**Onde é mais barato abastecer em São Paulo e quanto essa escolha pode representar em um tanque?**
 
 ## Objetivo
 
@@ -57,21 +57,9 @@ dashboard-gasolina-sp/
 └── README.md
 ```
 
-## Como executar localmente
-
-Abra a pasta do projeto no VS Code e use a extensão **Live Server** no arquivo `index.html`.
-
-Como alternativa, abra o terminal na pasta do projeto e execute:
-
-```bash
-py -m http.server 8000
-```
-
-Em seguida, acesse [http://localhost:8000](http://localhost:8000) no navegador.
-
 ## Publicação
 
-O projeto será publicado no **GitHub Pages** a partir de um repositório público. [O link da versão publicada ](https://barbararprado1-debug.github.io/atividade-03-PADS/)
+O projeto foi publicado no **GitHub Pages** a partir de um repositório público. [O link da versão publicada ](https://barbararprado1-debug.github.io/atividade-03-PADS/)
 
 
 
