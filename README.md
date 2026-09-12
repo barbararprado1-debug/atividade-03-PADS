@@ -4,6 +4,7 @@
 - Gabrielle
 - Letícia
 - Gustavo
+- Celso
 
 # Onde vale mais a pena abastecer em São Paulo?
 
