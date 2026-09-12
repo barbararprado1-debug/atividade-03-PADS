@@ -71,7 +71,7 @@ Em seguida, acesse [http://localhost:8000](http://localhost:8000) no navegador.
 
 ## Publicação
 
-O projeto será publicado no **GitHub Pages** a partir de um repositório público. [O link da versão publicada será incluído aqui após a publicação.](https://barbararprado1-debug.github.io/atividade-03-PADS/)
+O projeto será publicado no **GitHub Pages** a partir de um repositório público. [O link da versão publicada ](https://barbararprado1-debug.github.io/atividade-03-PADS/)
 
 
 
